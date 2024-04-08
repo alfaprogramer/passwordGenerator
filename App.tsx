@@ -146,22 +146,22 @@ function App(): React.JSX.Element {
           />
          </View>
          <View style={styles.inputWrapper}>
-         <Text style={styles.heading}> Include LowerCase</Text>
+         <Text style={styles.heading}> Include Numbers</Text>
           <BouncyCheckbox
           disableBuildInState
-          isChecked={lowercase}
-          onPress={()=> setlowercase(!lowercase)}
-          fillColor='#29AB87'
+          isChecked={numbers}
+          onPress={()=> setnumbers(!numbers)}
+          fillColor='#A020F0'
           
           />
          </View>
          <View style={styles.inputWrapper}>
-         <Text style={styles.heading}> Include LowerCase</Text>
+         <Text style={styles.heading}> Include Symbols</Text>
           <BouncyCheckbox
           disableBuildInState
-          isChecked={lowercase}
-          onPress={()=> setlowercase(!lowercase)}
-          fillColor='#29AB87'
+          isChecked={symbols}
+          onPress={()=> setsymbols(!symbols)}
+          fillColor='#ff0000'
           
           />
          </View>
@@ -186,10 +186,10 @@ function App(): React.JSX.Element {
      </Formik>
         </View>
         {ispassgenerated ? (
-          <View style={{styles.card, styles.cardElevated}}>
+          <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.subTitle}>Result: </Text>
             <Text style={styles.description}>Long press to copy </Text>
-            <Text style={styles.generatedPassword}>{password}</Text>
+            <Text selectable={true} style={styles.generatedPassword}>{password}</Text>
           </View>
         ) : null}
       </SafeAreaView>
